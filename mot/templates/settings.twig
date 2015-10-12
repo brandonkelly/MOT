@@ -1,0 +1,31 @@
+{% import "_includes/forms" as forms %}
+
+<div class="mot-intro">
+  <img class="mot-logo" src="{{ resourceUrl('mot/mot.svg') }}" alt="Marks Outstanding Themer">
+  <p>Marks' Outstanding Themer allows you to inject some CSS styling directly into the Craft CMS. Give your clients a personalised feel to their content management system.</p>
+</div>
+
+<div class="mot-options">
+   {{ forms.colorField({ label:'Select Header Colour', id:"header", name:"header", value:settings.header }) }}
+   {{ forms.colorField({ label:'Select Background Colour', id:"background", name:"background", value:settings.background }) }}
+   {{ forms.colorField({ label:'Select Buttons Colour', id:"buttons", name:"buttons", value:settings.buttons }) }}
+   {{ forms.colorField({ label:'Select Headings Colour', id:"eadings", name:"eadings", value:settings.headings }) }}
+   {{ forms.colorField({ label:'Select Links Colour', id:"links", name:"links", value:settings.links }) }}
+   {{ forms.colorField({ label:'Select Sidebar Colour', id:"sidebar", name:"sidebar", value:settings.sidebar }) }}
+   {{ forms.colorField({ label:'Select Pane Colour', id:"pane", name:"pane", value:settings.pane }) }}
+   {{ forms.colorField({ label:'Select Switch Colour', id:"switch", name:"switch", value:settings.switch }) }}
+   {{ forms.colorField({ label:'Select Text Colour', id:"text", name:"text", value:settings.text }) }}
+   {{ forms.colorField({ label:'Select Help Colour', id:"help", name:"help", value:settings.help }) }}
+   {{ forms.colorField({ label:'Select Small Colour', id:"small", name:"small", value:settings.small }) }}
+</div>
+
+{% set css %}
+  .mot-intro { display: block; text-align:center; }
+  .mot-intro .mot-logo { width:70px; display:inline-block; }
+  .mot-intro p { font-size:16px; line-height:22px;  display:inline-block;}
+
+  .mot-options {}
+  .mot-options > .field {  }
+{% endset %}
+
+{% includeCss css %}
